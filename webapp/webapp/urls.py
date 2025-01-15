@@ -17,6 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from gamename.views import (
+    game_search_view,
+    game_detail_view,
+)
+from accounts.views import (
+    register_view,
+    login_view,
+    logout_view
+)
+from .views import home_view
+
 urlpatterns = [
+    path('',home_view),
+    path('movies/', game_search_view),
+    path('movies/<int:id>/', game_detail_view),
     path('admin/', admin.site.urls),
+    path('register/', register_view),
+    path('login/', login_view),
+    path('logout/', logout_view),
 ]
