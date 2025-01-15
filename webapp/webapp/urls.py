@@ -33,7 +33,7 @@ urlpatterns = [
     path('movies/', game_search_view),
     path('movies/<int:id>/', game_detail_view),
     path('admin/', admin.site.urls),
-    path('register/', register_view),
+    path('register/', register_view, name= 'register'),
     path('login/', login_view),
     path('logout/', logout_view),
 ]
